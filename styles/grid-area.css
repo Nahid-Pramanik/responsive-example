@@ -1,0 +1,68 @@
+/* grid aria definer  */
+.header{
+  grid-area: header;
+}
+.nav{
+  grid-area: nav;
+}
+.main{
+  grid-area: main;
+}
+.aside{
+  grid-area: aside;
+}
+.ad{
+  grid-area: ad;
+}
+.footer{
+  grid-area: footer;
+}
+.header, .nav, .main, .aside, .ad, .footer{
+  background-color: burlywood;
+  border-radius: 8px;
+}
+/* grid styles  */
+.body{
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  gap: 20px;
+  grid-template-areas: 
+  "header header header header"
+  "nav    main   main   aside"
+  "nav    main   main   ad"
+  "footer footer footer footer"
+  ;
+}
+
+@media screen and (max-width:576px){
+  .body{
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "ad"
+    "footer"
+    ;
+  }
+  .nav ul{
+    display: flex;
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width:576px) and (max-width:972px){
+  .body{
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+    "header header header"
+    "nav    nav    nav"
+    "aside  main   main"
+    "ad     footer footer"
+    ;
+  }
+  .nav ul{
+    display: flex;
+    justify-content: space-around;
+  }
+}
